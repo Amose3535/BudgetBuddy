@@ -1,0 +1,786 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3nskfcl0w344"]
+
+[ext_resource type="StyleBox" uid="uid://bu8856op88y60" path="res://Main/Assets/ChartBG.tres" id="1_kbyl1"]
+[ext_resource type="Script" path="res://Main/BarChart.gd" id="2_shruh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_077a1"]
+bg_color = Color(0.388235, 1, 0.454902, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08yw8"]
+bg_color = Color(1, 0.192157, 0.12549, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+
+[node name="BarChart" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_kbyl1")
+script = ExtResource("2_shruh")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 27.0
+offset_right = -22.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AsseY" type="Control" parent="Container"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 61.0
+offset_right = 11.0
+offset_bottom = -61.0
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="Container/AsseY"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Max" type="Label" parent="Container/AsseY/VSeparator"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = -2.0
+grow_horizontal = 2
+text = "MAX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxHalf" type="Label" parent="Container/AsseY/VSeparator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "MAX/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Min" type="Label" parent="Container/AsseY/VSeparator"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gennaio" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = -340.0
+offset_top = 2.194
+offset_right = -290.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Gennaio"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Gennaio"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Gennaio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Gen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Febbraio" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = -280.0
+offset_top = 2.194
+offset_right = -230.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Febbraio"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Febbraio"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Febbraio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Feb
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Marzo" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = -220.0
+offset_top = 2.194
+offset_right = -170.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Marzo"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Marzo"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Marzo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Mar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Aprile" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = -160.0
+offset_top = 2.194
+offset_right = -110.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Aprile"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Aprile"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Aprile"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Apr"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Maggio" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = -100.0
+offset_top = 2.194
+offset_right = -50.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Maggio"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Maggio"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Maggio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Mag
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Giugno" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = -40.0
+offset_top = 2.194
+offset_right = 10.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Giugno"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Giugno"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Giugno"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Giu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Luglio" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = 20.0
+offset_top = 2.194
+offset_right = 70.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Luglio"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Luglio"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Luglio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Lug"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Agosto" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = 80.0
+offset_top = 2.194
+offset_right = 130.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Agosto"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Agosto"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Agosto"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Ago"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settembre" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = 140.0
+offset_top = 2.194
+offset_right = 190.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Settembre"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Settembre"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Settembre"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Set"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ottobre" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = 200.0
+offset_top = 2.194
+offset_right = 250.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Ottobre"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Ottobre"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Ottobre"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Ott"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Novembre" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = 260.0
+offset_top = 2.194
+offset_right = 310.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Novembre"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Novembre"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Novembre"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Nov
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dicembre" type="Control" parent="Container"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.099
+anchor_right = 0.5
+anchor_bottom = 0.897
+offset_left = 320.0
+offset_top = 2.194
+offset_right = 370.0
+offset_bottom = 0.182007
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entrate" type="ProgressBar" parent="Container/Dicembre"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 25.0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_077a1")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Uscite" type="ProgressBar" parent="Container/Dicembre"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_08yw8")
+step = 0.001
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Container/Dicembre"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Dic
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AsseX" type="Control" parent="Container"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -42.0
+offset_right = -21.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HSeparator" type="HSeparator" parent="Container/AsseX"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

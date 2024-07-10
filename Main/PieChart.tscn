@@ -1,0 +1,292 @@
+[gd_scene load_steps=5 format=3 uid="uid://5bp0nhd25pkj"]
+
+[ext_resource type="StyleBox" uid="uid://bu8856op88y60" path="res://Main/Assets/ChartBG.tres" id="1_1kd04"]
+[ext_resource type="Script" path="res://Main/PieChart.gd" id="1_g1ek3"]
+[ext_resource type="Texture2D" uid="uid://e3cl26gkmoyd" path="res://Main/Assets/WhiteCircleOutline.png" id="2_5fmok"]
+[ext_resource type="Texture2D" uid="uid://dve3lf7heb72y" path="res://Main/Assets/WhiteCircle.png" id="2_kpjws"]
+
+[node name="PieChart" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_1kd04")
+script = ExtResource("1_g1ek3")
+
+[node name="Chart" type="TextureRect" parent="."]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -153.0
+offset_right = 49.0
+offset_bottom = 359.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_5fmok")
+
+[node name="Retribuzione" type="TextureProgressBar" parent="Chart"]
+modulate = Color(0.2, 0.929412, 0, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="Lavoro" type="TextureProgressBar" parent="Chart"]
+modulate = Color(1, 0.184314, 0.34902, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="Alimentari" type="TextureProgressBar" parent="Chart"]
+modulate = Color(1, 0.678431, 0.431373, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="Svago" type="TextureProgressBar" parent="Chart"]
+modulate = Color(0.282353, 1, 1, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="Immobile" type="TextureProgressBar" parent="Chart"]
+modulate = Color(1, 1, 0.313726, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="Arredamento" type="TextureProgressBar" parent="Chart"]
+modulate = Color(1, 0.490196, 0.976471, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="Studio" type="TextureProgressBar" parent="Chart"]
+modulate = Color(0.152941, 0.176471, 0.898039, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="Tasse" type="TextureProgressBar" parent="Chart"]
+modulate = Color(0.945098, 0.419608, 0, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="Veicoli" type="TextureProgressBar" parent="Chart"]
+modulate = Color(0.686275, 0.521569, 1, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="AltraSpesa" type="TextureProgressBar" parent="Chart"]
+modulate = Color(0.145098, 0.145098, 0.145098, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(256, 256)
+step = 0.1
+fill_mode = 4
+texture_progress = ExtResource("2_kpjws")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+top_level = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 497.0
+offset_top = 1.0
+offset_right = 650.0
+offset_bottom = 235.0
+grow_vertical = 2
+bbcode_enabled = true
+text = "[img=valign]res://Main/Assets/GREEN.png[/img] RETRIBUZIONE
+[img=valign]res://Main/Assets/RED.png[/img] LAVORO
+[img=valign]res://Main/Assets/ROSE.png[/img] ALIMENTARI
+[img=valign]res://Main/Assets/CYAN.png[/img] SVAGO
+[img=valign]res://Main/Assets/YELLOW.png[/img] IMMOBILI
+[img=valign]res://Main/Assets/PINK.png[/img] ARREDAMENTO
+[img=valign]res://Main/Assets/BLUE.png[/img] STUDIO
+[img=valign]res://Main/Assets/ORANGE.png[/img] TASSE
+[img=valign]res://Main/Assets/VIOLET.png[/img] VEICOLI
+[img=valign]res://Main/Assets/BLACK.png[/img] ALTRE SPESE"
+
+[node name="Panel" type="Panel" parent="RichTextLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="RichTextLabel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = -8.0
+grow_horizontal = 2
+text = " Anno: \"2024\" "
+
+[node name="Panel" type="Panel" parent="RichTextLabel/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2

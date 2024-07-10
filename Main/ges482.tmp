@@ -1,0 +1,415 @@
+[gd_scene load_steps=3 format=3 uid="uid://0iwcoskt1v2i"]
+
+[ext_resource type="Script" path="res://Main/gestore_spese.gd" id="1_rc7lk"]
+[ext_resource type="PackedScene" uid="uid://c63ixeftouvxm" path="res://Main/LineChart.tscn" id="2_y3kk1"]
+
+[node name="GestoreSpese" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rc7lk")
+
+[node name="Charts" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.32
+anchor_top = 0.407
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.359985
+offset_top = 0.264008
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="OptionButton" type="OptionButton" parent="Charts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.5
+offset_top = -56.0
+offset_right = 126.5
+offset_bottom = -21.0
+grow_horizontal = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "Line Chart"
+popup/item_0/id = 0
+popup/item_1/text = "Pie Chart"
+popup/item_1/id = 1
+popup/item_2/text = "Bar Chart"
+popup/item_2/id = 2
+
+[node name="LineChart" parent="Charts" instance=ExtResource("2_y3kk1")]
+layout_mode = 1
+
+[node name="Form" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 44.0
+offset_right = 426.0
+offset_bottom = 351.0
+scale = Vector2(0.85, 0.85)
+
+[node name="Label" type="Label" parent="Form"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = -38.55
+offset_right = 141.0
+offset_bottom = 5.45
+grow_horizontal = 2
+scale = Vector2(0.715576, 0.715576)
+pivot_offset = Vector2(135, 25)
+theme_override_font_sizes/font_size = 31
+text = "Inserisci elemento"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Form/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -3.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nome" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = -11.0
+offset_bottom = 44.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Nome"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 86.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Nome"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Form/Nome"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "Inserisci il nome"
+
+[node name="Importo" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 52.0
+offset_right = -11.0
+offset_bottom = 88.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Importo"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 86.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Importo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Form/Importo"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "Inserisci l'importo"
+
+[node name="Tipologia" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 96.0
+offset_right = -11.0
+offset_bottom = 132.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Tipologia"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 86.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Tipologia"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Form/Tipologia"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="CheckButton" type="CheckButton" parent="Form/Tipologia/Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_right = -60.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Form/Tipologia/Panel/CheckButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -11.0
+offset_right = 5.0
+offset_bottom = 12.0
+grow_vertical = 2
+text = "Uscita"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Form/Tipologia/Panel/CheckButton"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -11.0
+offset_right = 54.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Entrata"
+vertical_alignment = 1
+
+[node name="Genere" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 138.0
+offset_right = -11.0
+offset_bottom = 174.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Genere"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 86.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Genere"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DropDown" type="OptionButton" parent="Form/Genere"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = 1.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+item_count = 10
+selected = 0
+popup/item_0/text = "Retribuzione"
+popup/item_0/id = 0
+popup/item_1/text = "Lavoro"
+popup/item_1/id = 1
+popup/item_2/text = "Alimentari"
+popup/item_2/id = 2
+popup/item_3/text = "Svago"
+popup/item_3/id = 3
+popup/item_4/text = "Immobile"
+popup/item_4/id = 4
+popup/item_5/text = "Arredamento"
+popup/item_5/id = 5
+popup/item_6/text = "Studio"
+popup/item_6/id = 6
+popup/item_7/text = "Tasse"
+popup/item_7/id = 7
+popup/item_8/text = "Veicoli"
+popup/item_8/id = 8
+popup/item_9/text = "Altra Spesa"
+popup/item_9/id = 9
+
+[node name="Data" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 181.0
+offset_right = -11.0
+offset_bottom = 217.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Data"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 86.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Data"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Data" type="Control" parent="Form/Data"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -227.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="GG" type="TextEdit" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 34.0
+grow_vertical = 2
+placeholder_text = "GG"
+
+[node name="MM" type="TextEdit" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.5
+offset_right = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "MM"
+
+[node name="AAAA" type="TextEdit" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "AAAA"
+
+[node name="Label" type="Label" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = -28.0
+offset_right = 93.0
+offset_bottom = 22.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -29.0
+offset_right = -45.0
+offset_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Form"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.678
+anchor_right = 0.968
+anchor_bottom = 0.967
+offset_left = 38.48
+offset_top = 16.632
+offset_right = -40.784
+offset_bottom = -17.252
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 23
+text = "Completa Inserimento"
+
+[node name="Date" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -374.0
+offset_top = 13.0
+offset_right = -40.0
+offset_bottom = 49.0
+grow_horizontal = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Date"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+bbcode_enabled = true
+text = "[p align=center]Data: 69 [b]/[/b] 69 [b]/[/b] 6969[/p]"
+
+[connection signal="item_selected" from="Charts/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="Form/Genere/DropDown" to="." method="_on_drop_down_item_selected"]
+[connection signal="pressed" from="Form/Button" to="." method="_on_insert_button_pressed"]

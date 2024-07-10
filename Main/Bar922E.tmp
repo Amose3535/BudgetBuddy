@@ -1,0 +1,249 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3nskfcl0w344"]
+
+[ext_resource type="StyleBox" uid="uid://bu8856op88y60" path="res://Main/Assets/ChartBG.tres" id="1_kbyl1"]
+[ext_resource type="Script" path="res://Main/BarChart.gd" id="2_shruh"]
+
+[sub_resource type="Gradient" id="Gradient_blhcd"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ipexr"]
+gradient = SubResource("Gradient_blhcd")
+width = 40
+height = 300
+fill_from = Vector2(0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_m00k4"]
+color = Color(0, 0.580392, 0, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+vertical = true
+
+[node name="BarChart" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 373.0
+offset_top = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_kbyl1")
+script = ExtResource("2_shruh")
+
+[node name="ContainerMesi" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 40.0
+offset_right = -21.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="Gennaio" type="Control" parent="ContainerMesi"]
+layout_mode = 2
+
+[node name="Container" type="Control" parent="ContainerMesi/Gennaio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_right = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ContainerMesi/Gennaio/Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.785397
+text = "Gen"
+
+[node name="Barre" type="Control" parent="ContainerMesi/Gennaio/Container"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.938
+offset_bottom = 0.200012
+grow_horizontal = 2
+
+[node name="Entrata" type="TextureProgressBar" parent="ContainerMesi/Gennaio/Container/Barre"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 40.0
+grow_vertical = 2
+fill_mode = 3
+
+[node name="Uscita" type="TextureProgressBar" parent="ContainerMesi/Gennaio/Container/Barre"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -300.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
+fill_mode = 3
+texture_progress = SubResource("GradientTexture2D_ipexr")
+
+[node name="Assi" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(550, 0)
+
+[node name="Y" type="Control" parent="Assi"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 48.0
+offset_right = 28.0
+offset_bottom = -60.0
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="Assi/Y"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 26.0
+offset_right = 20.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_m00k4")
+
+[node name="Max" type="Label" parent="Assi/Y/VSeparator"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+text = "MAX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Min" type="Label" parent="Assi/Y/VSeparator"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -1.0
+offset_right = 20.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="X" type="Control" parent="Assi"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HSeparator" type="HSeparator" parent="Assi/X"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -2.0
+offset_right = -40.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Assi/X/HSeparator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Gennaio" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Febbraio" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Marzo" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Aprile" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Maggio" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Giugno" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Luglio" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Agosto" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Settembre" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Ottobre" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Novembre" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"
+
+[node name="Dicembre" type="Label" parent="Assi/X/HSeparator/HBoxContainer"]
+layout_mode = 2
+text = "GEN"

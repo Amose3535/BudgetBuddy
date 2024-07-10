@@ -1,0 +1,654 @@
+[gd_scene load_steps=7 format=3 uid="uid://0iwcoskt1v2i"]
+
+[ext_resource type="Script" path="res://Main/gestore_spese.gd" id="1_rc7lk"]
+[ext_resource type="Texture2D" uid="uid://bv3nc5wixtftw" path="res://Main/Assets/IMGsmall.png" id="2_jqj3b"]
+[ext_resource type="PackedScene" uid="uid://c63ixeftouvxm" path="res://Main/LineChart.tscn" id="2_y3kk1"]
+[ext_resource type="StyleBox" uid="uid://bu8856op88y60" path="res://Main/Assets/ChartBG.tres" id="4_oduc3"]
+[ext_resource type="PackedScene" uid="uid://f1485s8veppn" path="res://Main/RatioBox.tscn" id="5_spfpo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdti3"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.235294, 0.235294, 0.235294, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+anti_aliasing_size = 3.606
+
+[node name="GestoreSpese" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rc7lk")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 5
+stretch_mode = 6
+
+[node name="Dropdown" type="MenuButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.0
+offset_top = 4.0
+offset_right = 16.0
+offset_bottom = 35.0
+grow_horizontal = 2
+text = "⋮"
+flat = false
+item_count = 1
+popup/item_0/text = "Cambia sfondo"
+popup/item_0/icon = ExtResource("2_jqj3b")
+popup/item_0/id = 0
+
+[node name="ErrorBox" type="Control" parent="Background/Dropdown"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.5
+offset_top = 4.0
+offset_right = 122.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(504, 46)
+
+[node name="Panel" type="Panel" parent="Background/Dropdown/ErrorBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background/Dropdown/ErrorBox/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[color=orange]ERRORE: Impossibile caricare l'immagine, carica un altra foto"
+
+[node name="FileDialog" type="FileDialog" parent="Background"]
+title = "Open a File"
+initial_position = 5
+size = Vector2i(649, 469)
+always_on_top = true
+ok_button_text = "Apri"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.jpg", "*.jpeg", "*.png")
+show_hidden_files = true
+use_native_dialog = true
+
+[node name="Charts" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.337361
+anchor_top = 0.407
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.360016
+offset_top = -79.736
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton" type="OptionButton" parent="Charts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.5
+offset_top = -37.0
+offset_right = 81.5
+offset_bottom = -2.0
+grow_horizontal = 2
+focus_mode = 1
+item_count = 3
+selected = 0
+popup/item_0/text = "Grafico a linee"
+popup/item_0/id = 0
+popup/item_1/text = "Grafico a torta"
+popup/item_1/id = 1
+popup/item_2/text = "Grafico a barre"
+popup/item_2/id = 2
+
+[node name="LineChart" parent="Charts" instance=ExtResource("2_y3kk1")]
+layout_mode = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_gdti3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Charts"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_oduc3")
+
+[node name="Form" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 26.0
+offset_right = 451.0
+offset_bottom = 333.0
+scale = Vector2(0.85, 0.85)
+
+[node name="Label" type="Label" parent="Form"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.324
+offset_top = -36.4706
+offset_right = 140.676
+offset_bottom = 7.52941
+grow_horizontal = 2
+scale = Vector2(0.602324, 0.602324)
+pivot_offset = Vector2(135, 25)
+theme_override_font_sizes/font_size = 31
+text = "Inserisci elemento"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Form/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -1.04678
+offset_right = 5.0
+offset_bottom = 1.95322
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nome" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 8.0
+offset_right = -11.0
+offset_bottom = 44.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Nome"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 1.17647
+offset_right = 86.0
+offset_bottom = 1.17647
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Nome"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Form/Nome"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -267.0
+offset_top = 1.17647
+offset_bottom = 1.17647
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 1
+placeholder_text = "Inserisci il nome"
+
+[node name="Importo" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 52.0
+offset_right = -11.0
+offset_bottom = 88.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Importo"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 2.35294
+offset_right = 86.0
+offset_bottom = 2.35294
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Importo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Form/Importo"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 5.88235
+offset_right = 1.99997
+offset_bottom = 29.8824
+grow_horizontal = 0
+bbcode_enabled = true
+text = "[p align = center]   €"
+
+[node name="Panel" type="Panel" parent="Form/Importo/RichTextLabel"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = -3.64706
+offset_right = 35.0
+offset_bottom = 32.3529
+
+[node name="TextEdit" type="TextEdit" parent="Form/Importo"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = 2.35294
+offset_right = -36.0
+offset_bottom = 2.35294
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 1
+placeholder_text = "Inserisci l'importo"
+
+[node name="Tipologia" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 96.0
+offset_right = -11.0
+offset_bottom = 132.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Tipologia"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 3.5294
+offset_right = 88.0
+offset_bottom = 3.5294
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Tipologia"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RatioBox" parent="Form/Tipologia" instance=ExtResource("5_spfpo")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -14.4706
+offset_bottom = 20.5294
+grow_horizontal = 0
+
+[node name="Genere" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 138.0
+offset_right = -11.0
+offset_bottom = 174.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Genere"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 4.70588
+offset_right = 86.0
+offset_bottom = 4.70588
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Genere"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DropDown" type="OptionButton" parent="Form/Genere"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = 5.70588
+offset_bottom = 3.70588
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+item_count = 10
+selected = 0
+popup/item_0/text = "Retribuzione"
+popup/item_0/id = 0
+popup/item_1/text = "Lavoro"
+popup/item_1/id = 1
+popup/item_2/text = "Alimentari"
+popup/item_2/id = 2
+popup/item_3/text = "Svago"
+popup/item_3/id = 3
+popup/item_4/text = "Immobile"
+popup/item_4/id = 4
+popup/item_5/text = "Arredamento"
+popup/item_5/id = 5
+popup/item_6/text = "Studio"
+popup/item_6/id = 6
+popup/item_7/text = "Tasse"
+popup/item_7/id = 7
+popup/item_8/text = "Veicoli"
+popup/item_8/id = 8
+popup/item_9/text = "Altra Spesa"
+popup/item_9/id = 9
+
+[node name="Data" type="Control" parent="Form"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 181.0
+offset_right = -11.0
+offset_bottom = 217.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Form/Data"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 5.88235
+offset_right = 86.0
+offset_bottom = 5.88235
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Data"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Data" type="Control" parent="Form/Data"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -227.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="GG" type="OptionButton" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.166
+anchor_top = 0.005
+anchor_right = -0.054
+anchor_bottom = 1.0
+offset_left = 0.0349236
+offset_top = 7.05529
+offset_right = 25.6109
+offset_bottom = 7.23529
+grow_vertical = 2
+focus_mode = 1
+
+[node name="MM" type="OptionButton" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299
+anchor_right = 0.364
+anchor_bottom = 1.0
+offset_left = -9.28497
+offset_top = 7.05882
+offset_right = 23.96
+offset_bottom = 7.05882
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+
+[node name="AAAA" type="OptionButton" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = 7.05882
+offset_bottom = 7.05882
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 1
+
+[node name="Label" type="Label" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.29411
+offset_top = -20.9412
+offset_right = 68.2941
+offset_bottom = 29.0588
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Form/Data/Data"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -129.882
+offset_top = -21.9412
+offset_right = -70.8823
+offset_bottom = 28.0588
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Form"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.745
+anchor_right = 0.968
+anchor_bottom = 0.967
+offset_left = 38.042
+offset_top = 7.82748
+offset_right = -40.784
+offset_bottom = -5.48749
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 23
+text = "Completa Inserimento"
+
+[node name="CurrentDate" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -307.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = 51.0
+grow_horizontal = 0
+
+[node name="DataCorrente" type="RichTextLabel" parent="CurrentDate"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+bbcode_enabled = true
+text = "[p align=center]Data corrente: 69 [b]/[/b] 69 [b]/[/b] 6969[/p]"
+
+[node name="ChooseDate" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -266.0
+offset_top = 61.0
+offset_right = -15.0
+offset_bottom = 95.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="ChooseDate"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 184.0
+grow_vertical = 2
+text = "Anno selezionato: "
+vertical_alignment = 1
+
+[node name="DateOption" type="OptionButton" parent="ChooseDate"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -14.0
+offset_right = -5.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Cronologia" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -357.0
+offset_right = 385.0
+offset_bottom = -6.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Cronologia"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cronologia/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="Ricerca" type="Panel" parent="Cronologia"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 39.0
+grow_horizontal = 2
+
+[node name="TestoRicerca" type="LineEdit" parent="Cronologia/Ricerca"]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 149.0
+offset_bottom = 35.0
+focus_mode = 1
+placeholder_text = "Ricerca per nome"
+
+[node name="Ordine" type="Button" parent="Cronologia/Ricerca"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = 35.0
+grow_horizontal = 0
+focus_mode = 1
+text = "DECR."
+
+[node name="Label" type="Label" parent="Cronologia/Ricerca"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_top = 7.0
+offset_right = -66.0
+offset_bottom = 30.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 12
+text = "Ordine cronologico:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="file_selected" from="Background/FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="item_selected" from="Charts/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="Form/Genere/DropDown" to="." method="_on_drop_down_item_selected"]
+[connection signal="pressed" from="Form/Button" to="." method="_on_insert_button_pressed"]
+[connection signal="item_selected" from="ChooseDate/DateOption" to="." method="_on_date_option_item_selected"]
+[connection signal="text_changed" from="Cronologia/Ricerca/TestoRicerca" to="." method="_on_testo_ricerca_text_changed"]
+[connection signal="pressed" from="Cronologia/Ricerca/Ordine" to="." method="_on_ordine_pressed"]

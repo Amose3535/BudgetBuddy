@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c63ixeftouvxm"]
+
+[ext_resource type="Script" path="res://addons/graph_2d/graph_2d.gd" id="1_7peko"]
+[ext_resource type="StyleBox" uid="uid://bu8856op88y60" path="res://Main/Assets/ChartBG.tres" id="1_x4k6g"]
+
+[node name="LineChart" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_x4k6g")
+
+[node name="Graph2D" type="Control" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 9.0
+offset_right = -21.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7peko")
+x_max = 12.0
+x_label = "Mesi"
+background_color = Color(0, 0, 0, 0)
+grid_horizontal_visible = true
+grid_horizontal_color = Color(0.341176, 0.639216, 0.129412, 1)
+grid_vertical_visible = true
+grid_vertical_color = Color(1, 0.0901961, 0.231373, 1)
